@@ -1,1 +1,1 @@
-# Weak-Password-Detection-using-Bloom-Filters
+# Weak Password Detection using Bloom-Filters
