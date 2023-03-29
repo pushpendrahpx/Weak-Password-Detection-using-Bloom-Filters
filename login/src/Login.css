@@ -1,0 +1,18 @@
+.main {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right bottom,
+    color-stop(0, #0f1932),
+    color-stop(100%, #45acbf)
+  );
+  background: -webkit-linear-gradient(-45deg, #0f1932 0, #45acbf 100%);
+  background: linear-gradient(135deg, #0f1932 0, #45acbf 100%);
+  height: 100vh;
+  padding: 100px 10px 40px;
+}
+.alpha {
+  width: 80%;
+  border-radius: 10px;
+  background: white;
+}
