@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 from typing import Union
-from fastapi import FastAPI
+from fastapi import FastAPI, Response
 from Bloomfilter.index import BloomFilter
 import pymongo
 
@@ -31,25 +31,11 @@ with open("passwords/weak10000.txt") as file:
 def read_root():
     return {"Hello": "World"}
 
-class Middleware:
-    def __init__(self, app):
-        self.app = app
-
-    async def __call__(self, scope, receive, send):
-        assert scope["type"] == "http"
-        headers = dict(scope["headers"])
-        headers[b"Access-Control-Allow-Origin"] = b'*' # generate the way you want
-        headers[b"Access-Control-Allow-Headers"] = b"*"
-        scope["headers"] = [(k, v) for k, v in headers.items()]
-        await self.app(scope, receive, send)
-
-app.add_middleware(Middleware)
-
 
 
 @app.get("/check/{item}")
-def read_item(item: str):
-    
+def read_item(item: str, response: Response):
+    response.headers['ACCESS-CONTROL-ALLOW-ORIGIN'] = "*"
     # this checks in BloomFilter
     # if we get no, then it means surely it is not there
     if(bf.check(item) == False):
