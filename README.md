@@ -38,3 +38,8 @@ Probability of hash-function is
 <img width="306" alt="image" src="https://user-images.githubusercontent.com/48829314/229110063-53cd00a9-86e9-4d53-afea-eb73d97fe8ce.png">
 
 <img width="710" alt="image" src="https://user-images.githubusercontent.com/48829314/229110125-4b486897-d327-445f-8a14-c5b6d1c7aec5.png">
+
+
+
+#### References
+1. https://www.geeksforgeeks.org/bloom-filters-introduction-and-python-implementation/
